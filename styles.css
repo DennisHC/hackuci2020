@@ -57,3 +57,20 @@ body {
 #corgiButtonId {
   color:white;
 }
+
+
+
+#homeButton {
+  color: black;
+  text-align: center;
+}
+
+#aboutUsButton {
+  color: black;
+  text-align: center;
+}
+
+#createAnAccountButton {
+  color: black;
+  text-align: center;
+}
