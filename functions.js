@@ -76,37 +76,26 @@ function currentTime()
     let seconds = date.getSeconds();
 }
 
-function updateTime(k)
-{
-    if (k < 10)
-    {
-        return "0" + k;
-    }
-    else
-    {
-        return k;
-    }
-}
 
 
 function currentTime() {
-  var date = new Date(); /* creating object of Date class */
-  var hour = date.getHours();
-  var min = date.getMinutes();
+  let hour = date.getHours();
+  let min = date.getMinutes();
   var sec = date.getSeconds();
+
   hour = updateTime(hour);
   min = updateTime(min);
   sec = updateTime(sec);
   document.getElementById("clock").innerText = hour + " : " + min + " : " + sec; /* adding time to the div */
-  var t = setTimeout(function(){ currentTime() }, 1000); /* setting timer */
+  let t = setTimeout(function(){ currentTime() }, 1000); /* setting timer */
 }
 
-function updateTime(k) {
-  if (k < 10) {
-    return "0" + k;
+function updateTime(n) {
+  if (n < 10) {
+    return "0" + n;
   }
   else {
-    return k;
+    return n;
   }
 }
 
@@ -149,7 +138,21 @@ function generateRandomPositiveAffirmation()
         case 9:
             return "“Entrepreneurs Are Great At Dealing With Uncertainty And Also Very Good At Minimizing Risk. That’s The Classic Entrepreneur.” – Mohnish Pabrai";
             break;
-
+        default:
+            return "If you change nothing, nothing will change.";
+            break;
+    }
+}
+let i = 0;
+let word = "Hello friend!"
+let speed = 50;
+function corgiButtonHandler()
+{
+    if (i < word.length)
+    {
+        document.getElementById("corgiButtonId").innerHTML += word.charAt(i);
+        i++;
+        setTimeout(corgiButtonHandler,speed)
     }
 }
 

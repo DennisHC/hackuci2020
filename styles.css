@@ -12,8 +12,9 @@ h1 {
 
 
 body {
-  background-color: #121212;
+  background-color: #121212 !important;
 }
+
 
 #clock {
   font-family: 'Orbitron', sans-serif;
@@ -34,7 +35,25 @@ body {
 
 #positiveAffirmations {
     font-family: Cambria;
-    color: black;
+    color: white;
     font-size: 11px;
     text-align: right;
+}
+
+.corgiButton {
+  border-radius: 50%;
+}
+
+.corgiButton:hover {
+  cursor: pointer;
+  padding: 50px;
+}
+.corgiButton:active {
+  background-color: #133662;
+  box-shadow: 0 5p;
+  transform: translateY(4px);
+}
+
+#corgiButtonId {
+  color:white;
 }
