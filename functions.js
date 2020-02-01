@@ -156,8 +156,64 @@ function corgiButtonHandler()
     }
 }
 
+
+
+/* TO DO */
+
+let todos = [  ];
+
+function display(){
+    document.getElementById('todo-list').innerHTML = "To Do List:";
+    todos.forEach(createTodoItem);
+    document.getElementById('todo-list').innerHTML += `
+        <div class="todo-add-button" onclick="askForTodo();">
+            <div class="todo-add-text"> Click to Add </div>
+        </div>
+    `;
+}
+
+function createTodoItem(item, index){
+    let template = `
+        <div class="todo-item" onclick="toggle(${index});">
+            <div class="todo-content ${item.isComplete && "todo-complete"}"> ${item.todoContent} </div>
+            <div class="todo-check"> ${item.isComplete ? "⦿" : "◯"} </div>
+        </div>
+    `;
+    document.getElementById('todo-list').innerHTML += template;
+}
+
+async function askForTodo()
+{
+    const { value: text } = await Swal.fire({
+        title: 'Add To-Do to List',
+        input: 'text',
+        inputPlaceholder: 'Enter Name of To-Do'
+    });
+
+    if(text){
+        addItem(text)
+    }
+    
+}
+
+function addItem(content){
+    todos.push({
+        todoContent: content,
+        isComplete: false
+    });
+    display();
+}
+
+function toggle(index){
+    todos[index].isComplete = !todos[index].isComplete;
+    display();
+}
+
+/* end of TODO */
+
 retrieveDate();
 
 currentTime(); /* calling currentTime() function to initiate the process */
 
 positiveAffirmationsGenerator();
+
