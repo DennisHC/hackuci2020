@@ -9,6 +9,7 @@ h1 {
 /* Google fonts */
 @import url('https://fonts.googleapis.com/css?family=Orbitron');
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Sigmar+One&display=swap');
 
 
 body {
@@ -17,7 +18,7 @@ body {
 
 
 #clock {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Sigmar One', cursive;
   color: #0f5e72;
   font-size: 40px;
   text-align: right;

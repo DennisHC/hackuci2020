@@ -31,6 +31,32 @@
     <body onload="display()">
         <h1 class="container bg-dark text-white p-3"> Welcome to My App! </h1>
 
+        
+
+        <!-- Title Bar -->
+        <div class="row ml-5 p-3" id="titleBar">
+            <div class="col-4 bg-light" id="homeButton">Home</div>
+            <div class="col-4 bg-light" id="aboutUsButton">About Us</div>
+            <div class="col-4 bg-light pr-5" id="createAnAccountButton">Create an Account</div>
+        </div>
+
+        <!-- Date -->
+        <div id="date" class="col"></div>
+        <!-- Digital Clock -->
+        <div id="clock"></div>
+
+        <!-- Corgi Button -->
+        <div style="text-align:right"> 
+            <button onclick="corgiButtonHandler()" style="background-color:black;">
+                <img src="/corgi.jpg" class="corgiButton" alt="Corgi">
+            </button>
+        
+                <p id="corgiButtonId"></p>
+        </div>
+
+        <!-- Motivational Quote-->
+        <div id="positiveAffirmations"></div>
+
         <!-- TO DO DIV -->
         <div id='todo-list'>  
             <div> To Do List:</div>
@@ -39,23 +65,7 @@
             </div>
         </div>
 
-        <!-- Digital Clock -->
-        <div class="row ml-5 p-3" id="titleBar">
-            <div class="col-4 bg-light" id="homeButton">Home</div>
-            <div class="col-4 bg-light" id="aboutUsButton">About Us</div>
-            <div class="col-4 bg-light pr-5" id="createAnAccountButton">Create an Account</div>
-        </div>
-        <div id="date" class="col"></div>
-        <div id="clock"></div>
-        <div style="text-align:right"> 
-            <button onclick="corgiButtonHandler()">
-                <img src="/corgi.jpg" class="corgiButton" alt="Corgi">
-            </button>
-        
-                <p id="corgiButtonId"></p>
-        </div>
-        <div id="positiveAffirmations"></div>
-
+        <!-- Embedded Spotify Player -->
         <iframe
             src="https://open.spotify.com/embed/playlist/0aRiGVrMN6T72NZ4pbNxwD" 
             width="300" height="380" frameborder="0" allowtransparency="true"
@@ -63,7 +73,6 @@
             style= "float:right">
         </iframe>
     </body>
-
 
 
 </html>

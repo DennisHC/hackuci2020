@@ -82,12 +82,36 @@ function currentTime() {
   let hour = date.getHours();
   let min = date.getMinutes();
   var sec = date.getSeconds();
+  
+  str = updateTimeAMPM(date);
 
-  hour = updateTime(hour);
-  min = updateTime(min);
-  sec = updateTime(sec);
-  document.getElementById("clock").innerText = hour + " : " + min + " : " + sec; /* adding time to the div */
-  let t = setTimeout(function(){ currentTime() }, 1000); /* setting timer */
+//  hour = updateTime(hour);
+//  min = updateTime(min);
+//  sec = updateTime(sec);   document.getElementById("clock").innerText = hour + " : " + min + " : " + sec; /* adding time to the div */
+
+  document.getElementById("clock").innerText = str;
+  let t = setTimeout(function(){ currentTime() }, 1000); 
+}
+
+function updateTimeAMPM(date)
+{
+    let currentHour = date.getHours();
+    let currentMinute = date.getMinutes();
+
+    let ampm = currentHour >= 12 ? 'pm' : 'am';
+
+    if (currentMinute > 60)
+    {
+        ++currentHour;
+        currentMinute = currentMinute % 60;
+    }
+    if (currentHour > 12)
+    {
+        currentHour = currentHour % 12;
+    }
+    let str = currentHour + " : " + currentMinute + ampm;
+    console.log(str);
+    return str;
 }
 
 function updateTime(n) {
@@ -102,41 +126,41 @@ function updateTime(n) {
 function positiveAffirmationsGenerator()
 {
     let todayMessage = generateRandomPositiveAffirmation();
-    document.getElementById("positiveAffirmations").innerText = todayMessage;
+    document.getElementById("positiveAffirmations").innerHTML = "<pre id=positiveAffirmations>" + todayMessage + "</pre>";
 }
 
 function generateRandomPositiveAffirmation()
 {
-    let diceRoll = Math.floor(Math.random() * 10)
+    let diceRoll = Math.floor(Math.random() * 10);
 
     switch (diceRoll)
     {
         case 1:
-            return "“The Way Get Started Is To Quit Talking And Begin Doing.” – Walt Disney";
+            return "“The Way Get Started Is To Quit Talking And Begin Doing.” \n– Walt Disney";
             break;
         case 2:
-            return "The Pessimist Sees Difficulty In Every Opportunity. The Optimist Sees Opportunity In Every Difficulty.” – Winston Churchill";
+            return "The Pessimist Sees Difficulty In Every Opportunity.\n The Optimist Sees Opportunity In Every Difficulty.”\n – Winston Churchill";
             break;
         case 3:
-            return "“Don’t Let Yesterday Take Up Too Much Of Today.” – Will Rogers";
+            return "“Don’t Let Yesterday Take Up Too Much Of Today.”\n – Will Rogers";
             break;
         case 4:
-            return "“You Learn More From Failure Than From Success. Don’t Let It Stop You. Failure Builds Character.” – Unknown";
+            return "“You Learn More From Failure Than From Success.\n Don’t Let It Stop You. Failure Builds Character.”\n – Unknown";
             break;
         case 5:
-            return "“It’s Not Whether You Get Knocked Down, It’s Whether You Get Up.” – Inspirational Quote By Vince Lombardi";
+            return "“It’s Not Whether You Get Knocked Down, It’s Whether You Get Up.”\n – Inspirational Quote By Vince Lombardi";
             break;
         case 6:
-            return "“If You Are Working On Something That You Really Care About, You Don’t Have To Be Pushed. The Vision Pulls You.” – Steve Jobs";
+            return "“If You Are Working On Something That You Really Care About,\n You Don’t Have To Be Pushed. The Vision Pulls You.”\n – Steve Jobs";
             break;
         case 7:
-            return "“People Who Are Crazy Enough To Think They Can Change The World, Are The Ones Who Do.” – Rob Siltanen";
+            return "“People Who Are Crazy Enough To Think They Can Change The World,\n Are The Ones Who Do.”\n – Rob Siltanen";
             break;
         case 8:
-            return "“Failure Will Never Overtake Me If My Determination To Succeed Is Strong Enough.” – Og Mandino";
+            return "“Failure Will Never Overtake Me\n If My Determination To Succeed Is Strong Enough.”\n – Og Mandino";
             break;
         case 9:
-            return "“Entrepreneurs Are Great At Dealing With Uncertainty And Also Very Good At Minimizing Risk. That’s The Classic Entrepreneur.” – Mohnish Pabrai";
+            return "“Entrepreneurs Are Great At Dealing With Uncertainty\n And Also Very Good At Minimizing Risk.\n That’s The Classic Entrepreneur.”\n – Mohnish Pabrai";
             break;
         default:
             return "If you change nothing, nothing will change.";
