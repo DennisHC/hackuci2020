@@ -17,6 +17,11 @@
     <!-- Boot Strap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- Weather Widget-->
+    <link rel="stylesheet" href="weatherWidget.css">
+    <script value="text/javascript" src="weatherWidget.js" defer></script>
+
 </head>
 
 
@@ -107,7 +112,31 @@
     <script src="/__/firebase/7.8.0/firebase-firestore.js"></script>
     <script src="/__/firebase/init.js"></script>
     <script src="/auth.js"></script>
+
+
+<!-- Weather Widget-->
+<div id="container">
+    <div class="app-title">
+        <p>Weather</p>
+    </div>
+    <div id="notification"> </div>
+    <div class="weather-container">
+        <div class="weather-icon"><img src="icons/02d.png"></div>
+        <div class="temperature-value">
+            <p>- °C</p>
+        </div>
+        <div class="temperature-description">
+            <p> - </p>
+        </div>
+        <div class="location">
+            <p>-</p>
+        </div>
+        <div class="switch">
+               C / F
+        </div>
+    </div>
+</div> (edited) 
+
 </body>
 
-    
 </html>
