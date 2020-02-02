@@ -1,4 +1,5 @@
 from flask import Flask, render_template, send_from_directory
+from flask import request
 
 app = Flask(__name__, static_url_path='')
 
@@ -17,6 +18,11 @@ def send_css(path):
 @app.route('/js/<path:path>')
 def send_js(path):
     return send_from_directory('js', path)
+
+@app.route('/login', methods=['GET','POST']) 
+def login():
+    print(request.data)
+    return "from server"
 
 if __name__ == '__main__':
     app.run()
