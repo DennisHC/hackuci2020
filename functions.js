@@ -105,12 +105,33 @@ function updateTimeAMPM(date)
         ++currentHour;
         currentMinute = currentMinute % 60;
     }
+    else if(currentMinute < 10)
+    {
+        currentMinute = "0" + currentMinute;
+    }
+
     if (currentHour > 12)
     {
         currentHour = currentHour % 12;
     }
-    let str = currentHour + " : " + currentMinute + ampm;
-    console.log(str);
+    else if(currentHour < 10)
+    {
+        str += "0";
+    }
+    let str = "";
+/*
+    if(currentHour < 10)
+    {
+        let str = "0" + currentHour + " : " + currentMinute + ampm;
+    }
+
+    if(currentMinute < 10)
+    {
+        str = currentHour + " : 0" + currentMinute + ampm;
+    }
+    */
+    str = currentHour + " : " + currentMinute + ampm;
+    //console.log(str);
     return str;
 }
 
